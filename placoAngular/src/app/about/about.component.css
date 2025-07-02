@@ -1,0 +1,137 @@
+#texto{
+    text-align: center;
+    color: black;
+}
+
+.card img{
+    width: 80%;
+    height: 60%;
+    margin: auto;
+    border-radius: 20px !important;
+}
+
+.card-group{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.card {
+    padding: 20px;
+    background-color: #b99d81;
+    border-radius: 20px !important;  /* Borde redondeado para la tarjeta */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.04);
+}
+
+.informacion{
+    max-width: 90%;
+    background-color: #b99d81;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    text-align: left;
+}
+  
+body{
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #AF8260 !important;
+    padding: 40px;
+    border: black 2px dashed;
+
+    box-shadow: 1px 3px 4px black;
+}
+
+.tituloAbout{
+    margin-bottom: 2rem;
+    text-align:center;
+}
+
+hr{
+    border: dashed 2px black;
+    margin: 40px;
+    color: #AF8260;
+
+}
+
+i{
+    margin-right: 20px;
+    color: #674329;
+}
+
+ul{
+    list-style: none;
+}
+.light-contrast {
+    background-color: #b99d81 !important;
+    color: #000000 !important;
+}
+
+/* Estilos para el modo de contraste oscuro */
+.dark-contrast {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: solid yellow 1px;
+}
+
+.dyslexic-font {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.texto{
+  padding:30px;
+}
+.nav-style{
+    text-decoration: none;
+}
+.item-float{
+    z-index: 1;
+    width: 500px;
+}
+.dropdown {
+    position: fixed; /* Fija el elemento en la pantalla */
+    top: 120px; /* Ajusta la distancia desde la parte superior según sea necesario */
+    left: 20px; /* Ajusta la distancia desde la izquierda según sea necesario */
+    z-index: 1000;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    cursor: pointer;
+  }
+
+  .tituloPagina{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    
+  }
+
+  .hrTitulo{
+    border: dashed 2px black;
+    color: #AF8260;
+    margin: 40px;
+
+  }

@@ -1,0 +1,168 @@
+<div class="dropdown nav-item item-float">
+  <a class="nav-link nav-link dropdown-toggle">
+    <i class="fa-solid fa-universal-access fa-xl"></i>
+  </a>
+  <div class="dropdown-content" [style.fontSize.px]="fontSize">
+    <a class="dropdown-item nav-style" (click)="readContent()" [class]="isContrastMode ? 'dark-contrast' : 'light-contrast'" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont">
+      Leer texto <i class="fa-solid fa-play fa-lg pl-3"></i>
+     </a>
+     <a class="navbar-item nav-style" (click)="increaseFontSize()" [class]="isContrastMode ? 'dark-contrast' : 'light-contrast'" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont">
+       Aumentar texto <i class="fa-solid fa-plus fa-lg pl-3"></i>
+     </a>
+     <a class="navbar-item nav-style" (click)="decreaseFontSize()" [class]="isContrastMode ? 'dark-contrast' : 'light-contrast'" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont">
+       Decrementar texto <i class="fa-solid fa-minus fa-lg pl-3"></i>
+     </a>
+     <a class="navbar-item nav-style" (click)="increasePadding()" [class]="isContrastMode ? 'dark-contrast' : 'light-contrast'" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont">
+       Aumentar espaciado <i class="fa-solid fa-boxes-stacked fa-lg pl-3"></i>
+     </a>
+     <a class="navbar-item nav-style" (click)="toggleContrast()" [class]="isContrastMode ? 'dark-contrast' : 'light-contrast'" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont">
+       Cambiar contraste <i class="fa-solid fa-droplet fa-lg pl-3"></i>
+     </a>
+     <a class="navbar-item nav-style" (click)="toggleDyslexicFont()" [class]="isContrastMode ? 'dark-contrast' : 'light-contrast'" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont">
+       Tipografia para dislexicos <i class="fa-solid fa-font fa-lg pl-3"></i>
+     </a>
+  </div>
+</div>
+<body id="content">
+    <div class="contactus" [class]="isContrastMode ? 'dark-contrast' : ''" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont" [style.fontSize.px]="fontSize">
+      <br>
+            <h1 class="tituloPagina" [class]="isContrastMode ? 'dark-contrast' : ''">Contactanos</h1> 
+        <hr class="hrTitulo">
+        <div class="box">
+            <div class="contact formContacto" [class]="isContrastMode ? 'dark-contrast' : ''" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont" [style.fontSize.px]="fontSize">
+                <h3 [class]="isContrastMode ? 'dark-contrast' : ''" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont" [style.fontSize.px]="fontSize">Manda tu mensaje</h3>
+
+
+                <form [formGroup]="formularioContacto" (ngSubmit)="onSubmit()" [class]="isContrastMode ? 'dark-contrast' : ''" [style.padding.px]="paddingSize" [class.dyslexic-font]="isDyslexicFont" [style.fontSize.px]="fontSize">
+                    <div class="formBox">
+                        <div class="row50">
+                            <div class="inputBox" >
+                                <span [class]="isContrastMode ? 'dark-contrast' : ''">Nombre</span>
+                                <input type="text" placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="nombre" formControlName="nombre">
+                                @if (this.formularioContacto.get('nombre')?.errors?.['required']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (El nombre no puede quedar vacio)
+                                    </span>
+                            
+                                  }
+                                  @if (this.formularioContacto.get('nombre')?.errors?.['minlength']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (Debe tener como minimo 3 caracteres)
+                                    </span>
+                                  }
+                            </div>
+                            <div class="inputBox">
+                                <span [class]="isContrastMode ? 'dark-contrast' : ''">Apellidos</span>
+                                <input type="text" placeholder="Apellidos" id="apellidos" name="apellidos" [(ngModel)]="apellido" formControlName="apellido" required>
+                                @if (this.formularioContacto.get('apellido')?.errors?.['required']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (Los apellidos no pueden quedar vacios)
+                                    </span>
+                            
+                                  }
+                                  @if (this.formularioContacto.get('apellido')?.errors?.['minlength']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (Deben tener como minimo 3 caracteres)
+                                    </span>
+                                  }
+                            </div>
+                        </div>
+
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span [class]="isContrastMode ? 'dark-contrast' : ''">Email</span>
+                                <input type="text" placeholder="Email" id="email" name="email" [(ngModel)]="email" formControlName="email" required>
+                                @if (this.formularioContacto.get('email')?.errors?.['required']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (El mail no puede quedar vacio)
+                                    </span>
+                                  }
+                                  @if (this.formularioContacto.get('email')?.errors?.['email']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (El mail no es valido)
+                                    </span>
+                                  }
+                            </div>
+                            <div class="inputBox">
+                                <span [class]="isContrastMode ? 'dark-contrast' : ''">Telefono</span>
+                                <input type="text" placeholder="Telefono" id="telefono" name="telefono" [(ngModel)]="telefono" formControlName="telefono" required>
+                                @if (this.formularioContacto.get('telefono')?.errors?.['required']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (El telefono no puede quedar vacio)
+                                    </span>
+                                  }
+                                  @if (this.formularioContacto.get('telefono')?.errors?.['telefonoInvalido']) {
+                                    <span [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (El telefono no es valido)
+                                    </span>
+                                  }
+                            </div>
+                        </div>
+
+                        <div class="row100">
+                            <div class="inputBox">
+                                <span [class]="isContrastMode ? 'dark-contrast' : ''">Mensaje</span>
+                                <textarea name="mensaje" id="mensaje" placeholder="Manda tu mensaje" [(ngModel)]="mensaje" formControlName="mensaje" required></textarea>
+                                @if (this.formularioContacto.get('mensaje')?.errors?.['required']) {
+                                    <div [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (El mensaje no puede quedar vacio)
+                                    </div>
+                                  }
+                                  @if (this.formularioContacto.get('mensaje')?.errors?.['maxlength']) {
+                                    <div [class]="isContrastMode ? 'dark-contrast' : ''">
+                                      (Debe tener como maximo 500 caracteres)
+                                    </div>
+                                  }
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="row100">
+                            <div class="inputBox" [class]="isContrastMode ? 'dark-contrast' : ''">
+                                <input type="submit" value="Enviar">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="contact info">
+                <h3 [class]="isContrastMode ? 'dark-contrast' : ''">Nuestro contacto</h3>
+                <div class="infoBox">
+                    <div>
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <p [class]="isContrastMode ? 'dark-contrast' : ''">Aguascalientes, Ags <br>Mexico</p>
+                    </div>
+                    <div>
+                        <span><i class="far fa-envelope"></i></span>
+                        <a href="mail: PlacoShoes@gmail.com" [class]="isContrastMode ? 'dark-contrast' : ''">PlacoShoesgmail.com</a>
+                    </div>
+                    <div>
+                        <span><i class="fas fa-mobile-alt"></i></span>
+                        <a href="tel: +52 449 123 1394" [class]="isContrastMode ? 'dark-contrast' : ''">+52 449 123 1394</a>
+                    </div>
+                    <div>
+                        <span><i class="fab fa-facebook-f"></i></span>
+                        <p [class]="isContrastMode ? 'dark-contrast' : ''">PlacoRefugio <br>Mexico</p>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <ul class="sci">
+                        <li><a href="https://www.facebook.com/PlacoShoes"></a></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.547006095845!2d-102.31886132482163!3d21.
+                             91351297996651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429eee247f25c8d%3A0x6ca6ecee48974407!2sEdificio%205
+                             4!5e0!3m2!1ses-419!2smx!4v1700269318353!5m2!1ses-419!2smx" width="600" height="450" style="border:0; border-radius: 15px;"
+                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+    </div><br>
+</body>

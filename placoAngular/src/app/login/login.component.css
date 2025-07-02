@@ -1,0 +1,124 @@
+#tituloLogin{
+    margin-bottom: 2rem;
+    text-align:center;
+}
+
+input{
+    align-items: center;
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+}
+
+button{
+    margin: 0 auto;
+    display: block;
+    background-color: #deac80;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    color: white;
+}
+
+button:hover{
+    background-color: #f0c9a5;
+}
+
+p{
+    text-align: center;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #AF8260;
+    padding: 40px;
+    border: black 2px dashed;
+
+    box-shadow: 1px 3px 4px black;
+}
+
+hr{
+    border: dashed 2px black;
+    margin: 40px;
+    color: #AF8260;
+}
+
+input{
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    color: #000000;
+    background-color: #f7f3ee;
+    border: none;
+    border-radius: 10px;
+}
+
+button{
+    background-color: #674329;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #81512c;
+    color: white;
+    transform: scale(1.1);
+}
+.light-contrast {
+    background-color: #b99d81 !important;
+    color: #000000 !important;
+}
+
+/* Estilos para el modo de contraste oscuro */
+.dark-contrast {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: solid yellow 1px;
+}
+
+.dyslexic-font {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.texto{
+  padding:30px;
+}
+.nav-style{
+    text-decoration: none;
+}
+.item-float{
+    z-index: 1;
+    width: 500px;
+}
+.dropdown {
+    position: fixed; /* Fija el elemento en la pantalla */
+    top: 120px; /* Ajusta la distancia desde la parte superior según sea necesario */
+    left: 20px; /* Ajusta la distancia desde la izquierda según sea necesario */
+    z-index: 1000;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    cursor: pointer;
+  }
+

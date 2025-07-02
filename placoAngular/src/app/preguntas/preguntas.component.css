@@ -1,0 +1,131 @@
+body {
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #AF8260 !important;
+    padding: 40px;
+    border: 2px dashed black;
+    box-shadow: 1px 3px 4px black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: black;
+    background: linear-gradient(135deg, #E4C59E 0%, #b99d81 100%);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid #AF8260;
+    position: relative;
+}
+
+.apartado {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.seccion {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #b99d81;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.seccion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pregunta h2 {
+    font-size: 22px;
+    color: black;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.respuesta p {
+    margin: 0;
+    color: black;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+hr{
+    border: dashed 2px black;
+    color: #AF8260;
+    margin: 10px;
+
+  }
+
+  .light-contrast {
+    background-color: #af8260 !important;
+    color: #000000 !important;
+}
+
+/* Estilos para el modo de contraste oscuro */
+.dark-contrast {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: solid yellow 1px;
+}
+
+.dyslexic-font {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.texto{
+  padding:30px;
+}
+.nav-style{
+    text-decoration: none;
+}
+.item-float{
+    z-index: 1;
+    width: 500px;
+}
+.dropdown {
+    position: fixed; /* Fija el elemento en la pantalla */
+    top: 120px; /* Ajusta la distancia desde la parte superior según sea necesario */
+    left: 20px; /* Ajusta la distancia desde la izquierda según sea necesario */
+    z-index: 1000;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    cursor: pointer;
+  }
+
+  .tituloPagina{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    
+  }
+
+  .hrTitulo{
+    border: dashed 2px black;
+    color: #AF8260;
+    margin: 40px;
+
+  }
+

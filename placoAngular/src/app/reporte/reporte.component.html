@@ -1,0 +1,87 @@
+<div class="containerReporte">
+  <hr>
+  <h1>Reportes</h1>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Hora</th>
+        <th>Fecha</th>
+        <th>Mascota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citas">
+        <td>{{ cita.nombre }}</td>
+        <td>{{ cita.correo }}</td>
+        <td>{{ cita.telefono }}</td>
+        <td>{{ cita.hora }}:00 hrs</td>
+        <td>{{ cita.fecha }}</td>
+        <td>{{ cita.nombreMascota }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+  <hr>
+  <h1>Cantidad por Raza</h1>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>Raza</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let raza of getRazaKeys()">
+        <td>{{ raza }}</td>
+        <td>{{ razaCounts[raza] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <canvas id="graficaRaza"></canvas>
+  <br><br>
+  <hr>
+  <h1>Edad de los Perros</h1>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>Edad</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let edad of getEdadKeys()">
+        <td>{{ edad }} años</td>
+        <td>{{ edadCounts[edad] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <canvas id="graficaEdad"></canvas>
+  <br><br>
+  <hr>
+  <h1>Tiempo en Adopción</h1>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>Tiempo</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tiempo of getTiempoKeys()">
+        <td>{{ tiempo }} meses</td>
+        <td>{{ tiempoCounts[tiempo] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <canvas id="graficaTiempo"></canvas>
+</div>
