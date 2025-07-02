@@ -64,7 +64,7 @@ export class CorreoComponent {
       text: cuerpoCorreo
     };
 
-    this.http.post('http://localhost:3000/correo', correo)
+    this.http.post('https://placorefugio.onrender.com/correo', correo)
       .subscribe(
         response => {
           Swal.fire({

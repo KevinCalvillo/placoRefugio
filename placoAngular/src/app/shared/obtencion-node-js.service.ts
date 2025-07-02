@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ObtencionNodeJSService {
-  private bd = 'http://localhost:3000/api/bd';
+  private bd = 'https://placorefugio.onrender.com/api/bd';
 
   constructor(private http: HttpClient) { }
 
