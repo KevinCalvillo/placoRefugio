@@ -48,8 +48,8 @@ const transporter = nodeMailer.createTransport({
     port: 465, 
     secure: true,
     auth: {
-        user: "animalesrefugio61@gmail.com",
-        pass: "odffcswhvadkyycl"
+        user: "kev322970@gmail.com",
+        pass: "iyge yeyp pcyk uvce"
     }
 });
 
@@ -63,7 +63,7 @@ app.post('/correo', (req, res) => {
     }
 
     let mail = {
-        to: 'animalesrefugio61@gmail.com',
+        to: 'kev322970@gmail.com',
         subject: subject,
         text: text,
     };

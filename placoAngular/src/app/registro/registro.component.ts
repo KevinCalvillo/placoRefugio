@@ -29,26 +29,54 @@ export class RegistroComponent {
   }, { validators: matchPasswordValidator() });
 
   onSubmit(): void {
-    const rawForm = this.form.getRawValue();
-    this.authService.registrar(rawForm.correo, rawForm.usuario, rawForm.contra, rawForm.telefono).subscribe({
-      next: () => {
-        Swal.fire({
-          title: 'Usuario registrado',
-          text: 'El registro fue exitoso.',
-          icon: 'success',
-          confirmButtonText: 'OK'
-        }).then(() => {
-          this.router.navigateByUrl('/login');
-        });
-      },
-      error: (err) => {
-        Swal.fire({
-          title: 'Error',
-          text: 'La contraseña debe ser mayor o igual a 6 digitos.',
-          icon: 'error',
-          confirmButtonText: 'OK'
-        });
-      }
-    });
+  // Verificamos si el formulario es válido antes de hacer nada
+  if (this.form.invalid) {
+    this.form.markAllAsTouched(); // Marca todos los campos para mostrar errores si es necesario
+    return;
   }
+
+  const rawForm = this.form.getRawValue();
+  
+  // Usamos el servicio de autenticación
+  this.authService.registrar(rawForm.correo, rawForm.usuario, rawForm.contra, rawForm.telefono).subscribe({
+    next: () => {
+      // Éxito: El usuario se registró correctamente
+      Swal.fire({
+        title: 'Usuario registrado',
+        text: 'El registro fue exitoso.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        this.router.navigateByUrl('/login');
+      });
+    },
+    error: (err) => {
+      // Error: Inspeccionamos el código de error para dar una respuesta útil
+      console.error('Error de Firebase:', err); // Mantenemos el error en consola para depuración
+      
+      let errorMessage = 'Ocurrió un error inesperado. Intenta de nuevo.'; // Mensaje por defecto
+
+      // Usamos un switch para manejar los errores más comunes
+      switch (err.code) {
+        case 'auth/weak-password':
+          errorMessage = 'La contraseña es muy débil. Debe tener al menos 6 caracteres.';
+          break;
+        case 'auth/email-already-in-use':
+          errorMessage = 'Este correo electrónico ya está registrado. Por favor, utiliza otro.';
+          break;
+        case 'auth/invalid-email':
+          errorMessage = 'El formato del correo electrónico no es válido.';
+          break;
+      }
+      
+      // Mostramos la alerta de SweetAlert con el mensaje correcto
+      Swal.fire({
+        title: 'Error en el registro',
+        text: errorMessage,
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
+  });
+}
 }
